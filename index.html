@@ -1,0 +1,82 @@
+<head>
+<title>FREE ROBUX</title>
+</head>
+
+<body>
+<center>
+<div id="main">
+<h1>FREE ROBUX</h1>
+<h3 id="output">0% Complete</h3>
+<button id="btn" onclick="btnClick()">Genorate!</button>
+<div id="progress">
+<div id="bar">
+</div>
+</div>
+<h2 id="stat">Status: <i>Ready</i></h2>
+</div>
+</center>
+</body>
+
+<script>
+var percent = 0;
+
+function btnClick() {
+document.getElementById("btn").innerHTML = "Please Wait...";
+var int = setInterval(function(){
+percent++;
+document.getElementById("output").innerHTML = percent + "% Complete";
+if(percent == 0) {
+document.getElementById("stat").innerHTML = "Status: <i>Ready</i>";
+} else if(percent < 100) {
+document.getElementById("stat").innerHTML = "Status: <i>Active</i>";
+} else if(percent == 100) {
+document.getElementById("stat").innerHTML = "Status: <i>Complete</i>";
+document.getElementById("btn").innerHTML = "Done!";
+clearInterval(int);
+}
+},100);
+}
+
+</script>
+
+<style>
+* {
+color: #ffffff;
+font-family: sans-serif;
+}
+
+body {
+background: #ffff99;
+}
+
+#main {
+background: #55ff55;
+margin: 12px 100px;
+padding: 50px 100px
+}
+
+#progress {
+background: #ffffff;
+width: 400px;
+height: 20px;
+margin: 10px;
+}
+
+#bar {
+background: #00dd00;
+width: 200px;
+height 20px;
+}
+
+button {
+background: #00dd00;
+font-size: 20px;
+border: none;
+cursor: pointer;
+padding: 6px 8px;
+}
+
+button:hover {
+background: #00bb00;
+}
+</style>
